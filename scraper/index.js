@@ -8,7 +8,7 @@ const Checker = require('./checker');
 
 const scraper = new Scraper();
 
-const max_allowance = '432,51';
+const max_allowance = process.env.BELOW;
 
 const CronJob = require('cron').CronJob;
 const job = new CronJob('0 6 * * *', function () {
@@ -22,7 +22,7 @@ async function Main(){
     console.log('         Starting scrape for ' + now.getUTCFullYear() + '-' + (now.getUTCMonth()+1) + '-' + now.getDate());
     console.log('===============================================\n');
 
-    const links = await scraper.scrapeMain(100.00, 500.00);
+    const links = await scraper.scrapeMain(process.env.LOW, process.env.HIGH);
 
     const appartments = await scrapeLinks(links);
 
