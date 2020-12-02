@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('font/coolvetica.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('font/Roboto-Regular.ttf');
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
